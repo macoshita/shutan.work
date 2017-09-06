@@ -1,0 +1,129 @@
+@import "normalize.css";
+
+:root {
+  --fontFamilyBase: '游ゴシック体', 'Yu Gothic', YuGothic, 'ヒラギノ角ゴ Pro', 'Hiragino Kaku Gothic Pro', 'メイリオ', 'Meiryo', sans-serif;
+
+  background-color: #111;
+  color: #ccc;
+  font-size: 16px;
+  @media (width >= 768px) {
+    font-size: 20px;
+  }
+  @media (width >= 1024px) {
+    font-size: 24px;
+  }
+  font-family: var(--fontFamilyBase);
+}
+a {
+  color: #ccc;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+  margin-top: 0;
+}
+h1, h2, footer {
+  font-family: 'Indie Flower', var(--fontFamilyBase);
+}
+h1 {
+  font-size: 3rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1rem;
+  font-weight: bold;
+}
+p {
+  margin-top: 0;
+}
+address {
+  font-style: normal;
+}
+header {
+  position: relative;
+  text-align: center;
+  height: 50vh;
+  margin-bottom: 10vh;
+  background: url(/img/header.jpg) center no-repeat;
+  background-size: cover;
+  & > h1 {
+    position: absolute;
+    top: 5vh;
+    left: 0;
+    right: 0;
+    text-align: center;
+    & > span {
+      display: block;
+      &.s {
+        font-size: .8rem;
+        font-weight: normal;
+      }
+    }
+  }
+}
+.samples {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  & > .sample {
+    flex-basis: 45%;
+    margin-bottom: 10%
+  }
+}
+.carpet {
+  position: relative;
+  & .img {
+    width: 100vw;
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  & > .grad {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  &.midnight {
+    & .img {
+      background-image: url(/img/midnight.jpg);
+    }
+    & > .grad {
+      background: linear-gradient(#111f, #1110 20%);
+    }
+  }
+  &.daytime {
+    & .img {
+      background-image: url(/img/daytime.jpg);
+    }
+    & > .grad {
+      background: linear-gradient(#eee0 80%, #eeef);
+    }
+  }
+}
+footer {
+  text-align: center;
+  & > p {
+    margin: 1rem auto;
+  }
+}
+
+.w800 {
+  padding-left: 10vw;
+  padding-right: 10vw;
+  /* 800px より大きくならないように調整 */
+  @media (width >= 1000px) {
+    padding-left: calc((100vw - 800px) / 2);
+    padding-right: calc((100vw - 800px) / 2);
+  }
+}
+.pad {
+  padding-bottom: 10vh;
+}
+.light {
+  background-color: #eee;
+  color: #333;
+}

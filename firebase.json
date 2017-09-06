@@ -1,0 +1,25 @@
+{
+  "hosting": {
+    "public": "dist",
+    "headers": [
+      {
+        "source": ".well-known/amphtml/apikey.pub",
+        "headers": [
+          {
+            "key": "Content-Type",
+            "value": "text/plain"
+          }
+        ]
+      },
+      {
+        "source": "**/*.@(jpg|png|gif|svg)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "max-age=2592000"
+          }
+        ]
+      }
+    ]
+  }
+}

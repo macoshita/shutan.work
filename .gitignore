@@ -1,0 +1,5 @@
+node_modules/
+dist/
+tmp/
+amp-cache-private-key.pem
+.firebaserc

@@ -1,0 +1,75 @@
+
+doctype html
+html(⚡, lang='ja')
+  head
+    meta(charset='utf-8')
+    link(href='https://fonts.googleapis.com/css?family=Indie+Flower&text=SHUTANAboutEventGallerySupport', rel='stylesheet')
+    link(href='https://fonts.gstatic.com', rel='preconnect')
+    link(href='https://fonts.gstatic.com', rel='dns-prefetch')
+    script(async, src='https://cdn.ampproject.org/v0.js')
+    title SHU∞TAN
+    link(rel='canonical', href='https://shutan.work/')
+    meta(name='viewport', content='width=device-width,minimum-scale=1,initial-scale=1')
+    script(type='application/ld+json')
+      include ./schema.org.json
+    style(amp-boilerplate).
+      body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}
+    noscript
+      style(amp-boilerplate).
+        body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}
+    style(amp-custom)
+      include ../tmp/main.css
+    script(async, custom-element='amp-fx-flying-carpet', src='https://cdn.ampproject.org/v0/amp-fx-flying-carpet-0.1.js')
+    script(async, custom-element='amp-image-lightbox', src='https://cdn.ampproject.org/v0/amp-image-lightbox-0.1.js')
+  body
+    header
+      h1
+        span.s あかりひょうたんのお店
+        span.title SHU∞TAN
+    section.w800.pad
+      h2 About
+      p あかりひょうたんのお店SHU∞TANのページへようこそ。
+      p 掛け軸や染め物などの意匠に用いられるなど、昔から縁起物として広く用いられてきたひょうたん。同じものは二つとないその末広がりの形に、動物や植物などのモチーフをあしらって、「あかりひょうたん」に仕上げました。
+      p フリーマーケットなどのイベントに参加して販売しておりますので、ご興味がおありでしたら、ぜひいらしてください。
+    section.w800.pad
+      h2 Event
+      section
+        h3 9/9(土),9/10(日) 杜の手しごと市に出店いたします
+        p 両日ともの出店となる予定です。ぜひ起こしください。
+        p: a(href='https://www.facebook.com/events/742807549255037/') イベント情報はこちら
+        p: a(href='http://www.eshin-group.co.jp/diary.php?x=74&z=750') 出店作家さんの一覧はこちら
+    section
+      h2.w800 Gallery
+      section.w800.pad
+        h3 夜のひょうたん
+        p 枕元や足下をやさしく照らします。
+        .samples
+          each val in [1, 2, 3, 4]
+            .sample
+              amp-img(on='tap:lightbox', role='button', tabindex='0', src=`/img/midnight-sample${val}.jpg`, width='800', height='800', layout='responsive', alt=`夜のひょうたん${val}`)
+      .carpets.pad.light
+        .carpet.midnight
+          amp-fx-flying-carpet(height='50vh')
+            .img
+          .grad
+        .carpet.daytime
+          amp-fx-flying-carpet(height='50vh')
+            .img
+          .grad
+      section.w800.pad.light
+        h3 昼のひょうたん
+        p 明るい場所ではまた違った雰囲気をお楽しみいただけます。
+        .samples
+          each val in [1, 2, 3, 4]
+            .sample
+              amp-img(on='tap:lightbox', role='button', tabindex='0', src=`/img/daytime-sample${val}.jpg`, width='800', height='800', layout='responsive', alt=`昼のひょうたん${val}`)
+    amp-image-lightbox#lightbox(layout='nodisplay')
+
+    section.w800.pad.light
+      h2 Support
+      p ご購入されたひょうたんに関するお問い合わせは以下のメールアドレスにお願いします。
+      address
+        p gourdlight-shutan[at]yahoo.co.jp
+        p ※[at]を@に書き換えてください
+    footer
+      p (c) SHU∞TAN
