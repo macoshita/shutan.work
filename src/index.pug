@@ -37,7 +37,21 @@ html(⚡, lang='ja')
       include ../tmp/main.css
     script(async, custom-element='amp-fx-flying-carpet', src='https://cdn.ampproject.org/v0/amp-fx-flying-carpet-0.1.js')
     script(async, custom-element='amp-image-lightbox', src='https://cdn.ampproject.org/v0/amp-image-lightbox-0.1.js')
+    script(async, custom-element='amp-analytics', src='https://cdn.ampproject.org/v0/amp-analytics-0.1.js')
   body
+    amp-analytics(type='googleanalytics')
+      script(type='application/json').
+        {
+          "vars": {
+            "account": "UA-106045275-1"
+          },
+          "triggers": {
+            "trackPageview": {
+              "on": "visible",
+              "request": "pageview"
+            }
+          }
+        }
     header
       h1
         span.s あかりひょうたんのお店
