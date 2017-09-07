@@ -7,11 +7,27 @@ html(⚡, lang='ja')
     link(href='https://fonts.gstatic.com', rel='preconnect')
     link(href='https://fonts.gstatic.com', rel='dns-prefetch')
     script(async, src='https://cdn.ampproject.org/v0.js')
-    title SHU∞TAN
+    title= title
     link(rel='canonical', href='https://shutan.work/')
     meta(name='viewport', content='width=device-width,minimum-scale=1,initial-scale=1')
-    script(type='application/ld+json')
-      include ./schema.org.json
+
+    //- JSON LD
+    script(type='application/ld+json')!= JSON.stringify(schema)
+
+    //- Facebook Open Graph
+    meta(property='og:url', content=url)
+    meta(property='og:type', content='article')
+    meta(property='og:title', content=title)
+    meta(property='og:description', content=description)
+    meta(property='og:image', content=image)
+
+    //- Twitter Card
+    meta(name='twitter:card', content='summary')
+    meta(name='twitter:title', content=title)
+    meta(name='twitter:description', content=description)
+    meta(name='twitter:image', content=image)
+    meta(name='twitter:url', content=url)
+
     style(amp-boilerplate).
       body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}
     noscript

@@ -54,7 +54,9 @@ gulp.task('pug', ['assets', 'css'], () => {
   let manifest = gulp.src("./tmp/rev-manifest.json")
 
   return gulp.src('./src/index.pug')
-    .pipe(pug())
+    .pipe(pug({
+      locals: require('./pug-locals')
+    }))
     .pipe(revReplace({manifest: manifest}))
     .pipe(gulp.dest('./dist'))
     .pipe(reload({ stream: true }))
